@@ -1,0 +1,26 @@
+.vectorUp {
+  position: fixed;
+  /* width: 10%; */
+  /* display: inline-block; */
+  /* top: 70px; */
+  left: 0;
+  height: 300px;
+  width: 7%;
+}
+
+.vectorDown {
+  position: fixed;
+  /* width: 10%; */
+  /* display: inline-block; */
+  /* top: 460px; */
+  right: 0;
+  height: 250px;
+  width: 8%;
+}
+
+@media screen and (max-width: 768px) {
+  .vectorUp,
+  .vectorDown {
+    display: none;
+  }
+}

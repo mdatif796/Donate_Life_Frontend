@@ -1,0 +1,170 @@
+.donorContainer {
+  width: 100%;
+  position: relative;
+  margin-top: 70px;
+}
+
+.filterContainer {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.vectorUp {
+  position: fixed;
+  /* display: inline-block; */
+  top: 70px;
+  left: 0;
+  height: 300px;
+  width: 7%;
+}
+
+.vectorDown {
+  position: fixed;
+  /* display: inline-block; */
+  top: 460px;
+  right: 0;
+  height: 250px;
+  width: 8%;
+}
+
+.donorCardContainer {
+  /* width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 40px 80px 20px 80px; */
+  max-width: 70%;
+  margin: 70px auto;
+  /* margin-top: 70px; */
+  display: grid;
+  /* grid-template-columns: 200px 200px; */
+  /* grid-template-rows: 220px 220px; */
+  gap: 4rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+
+.donorCard {
+  /* width: 200px; */
+  /* height: 230px; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 5px rgba(239, 243, 249);
+  overflow: hidden;
+  /* margin-right: 50px;
+  margin-bottom: 60px; */
+  /* border: 0.2px solid #b5c4c1; */
+}
+
+.donorCard p {
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  /* height: 28px; */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background-image: linear-gradient(to right, #b5c4c1, #e2f9f5);
+  color: #292d2c;
+  font-weight: 600;
+}
+
+.donorCard span {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.contactDiv {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(to right, #aabde6, #89f6e8);
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+}
+
+.contactDiv span {
+  display: inline-block;
+  position: relative;
+}
+
+.contactDiv span span {
+  display: block;
+  position: absolute;
+  top: -3px;
+  right: -13px;
+  font-size: 12px;
+  color: #818181;
+}
+
+/* @keyframes rot {
+  0% {
+    border-radius: 50%;
+    transform: scale(0.85);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+} */
+.donorPic {
+  width: 100%;
+  aspect-ratio: 1;
+  vertical-align: middle;
+  transition: 1s;
+  /* height: 200px; */
+  /* aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: darken; */
+  /* aspect-ratio: 3/4;
+  object-fit: fill; */
+  /* margin-bottom: -4px; */
+}
+
+.donorPic:hover {
+  border-radius: 50%;
+  transform: scale(0.85);
+}
+
+@media screen and (max-width: 500px) {
+  .filterContainer {
+    width: 100%;
+  }
+
+  .donorCardContainer {
+    max-width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donorCard span {
+    font-size: 0.7rem;
+  }
+
+  .donorCard span span {
+    font-size: 8px;
+    top: -2px;
+    right: -10px;
+  }
+
+  .donorCard p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .donorCardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .donorCardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

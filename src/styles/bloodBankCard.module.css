@@ -1,0 +1,162 @@
+.cardContainer {
+  width: 100%;
+  /* height: 210px; */
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+  position: relative;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 5px rgb(254, 254, 254);
+}
+
+.contactBtn {
+  /* width: 15%; */
+  height: 40px;
+  position: absolute;
+  right: 0;
+  border: none;
+  background-image: linear-gradient(to right, #1357de, #649dfb);
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contactBtn img {
+  height: 1.2rem;
+  width: 1.2rem;
+  vertical-align: middle;
+}
+
+.leftDiv {
+  width: 40%;
+  /* height: 100%; */
+  height: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.leftDiv img {
+  width: 100%;
+  height: 220px;
+  object-position: center;
+  transition: 1s;
+  vertical-align: middle;
+  /* height: 100%; */
+  /* object-fit: cover; */
+  /* border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px; */
+}
+
+.leftDiv img:hover {
+  transform: scale(1.2);
+}
+
+.rightDiv {
+  width: 60%;
+  /* height: 100%; */
+  box-sizing: border-box;
+  padding-left: 0.8rem;
+  background-image: linear-gradient(to left top, #f8f8f8, #d9d9d9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightDiv h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  color: #2c2c2c;
+  font-weight: 400;
+  /* margin-top: 40px;
+  margin-bottom: 13px; */
+}
+
+.nameAndAddress h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  color: #282626;
+  font-weight: 600;
+}
+
+.nameAndAddress p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #282626;
+  padding: 5px 0;
+}
+
+.bloodAvailable {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 2px;
+  background-image: linear-gradient(to left top, #e1f3f5, #b9f2f1);
+  border-radius: 10px;
+}
+
+.bloodPara {
+  margin: 0;
+  width: 150px;
+  font-size: 0.9rem;
+  color: #222e2d;
+  letter-spacing: 1px;
+}
+
+.bloodPara span {
+  display: inline;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 650px) {
+  .contactBtn {
+    font-size: 9px;
+    height: 25px;
+  }
+
+  .contactBtn img {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .bloodPara {
+    width: 100px;
+    font-size: 0.5rem;
+  }
+
+  .bloodPara span {
+    font-size: 0.6rem;
+  }
+
+  .nameAndAddress h2 {
+    font-size: 0.8rem;
+  }
+
+  .nameAndAddress p {
+    font-size: 0.6rem;
+  }
+
+  .available h2 {
+    font-size: 0.8rem;
+  }
+
+  .leftDiv img {
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 0px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1280px) {
+}

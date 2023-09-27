@@ -1,0 +1,20 @@
+.icuContainer {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.filterAndIcuContainer {
+  width: 70%;
+  margin: auto;
+}
+
+.hospitals {
+  width: 100%;
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 480px) {
+  .filterAndIcuContainer {
+    width: 100%;
+  }
+}

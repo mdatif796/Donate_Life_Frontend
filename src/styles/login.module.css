@@ -1,0 +1,130 @@
+.loginContainer {
+  width: 100%;
+  height: 90vh;
+  padding-top: 70px;
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    #ffffff 0%,
+    rgb(232, 239, 249) 74.6%
+  );
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+.login {
+  width: 400px;
+  margin: auto;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px 5px rgba(239, 243, 249);
+  border-radius: 6px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.loginHeading {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.inputContainer {
+  width: 80%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+  width: 98%;
+  border: 1px solid #dde0e1;
+  border-radius: 5px;
+  padding: 5px 4px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.signInBtn {
+  width: 100%;
+  padding: 6px 2px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4299e1;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.signupPara {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signupPara a {
+  text-decoration: none;
+  color: #4299e1;
+}
+
+.profilePic {
+  position: absolute;
+  top: 15px;
+  right: 44%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* color: transparent; */
+  cursor: pointer;
+}
+
+.profilePic input {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.profilePic img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.selectContainer {
+  width: 99%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selectContainer select {
+  display: inline-block;
+  width: 38%;
+  height: 33px;
+  outline: none;
+  border-color: #dde0e1;
+  padding: 2px 2px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}

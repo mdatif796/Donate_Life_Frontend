@@ -1,0 +1,118 @@
+.donorContainer {
+  width: 70%;
+  /* height: 400px; */
+  margin: auto;
+  margin-top: 120px;
+}
+
+.donorDetailsContainer {
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.donorDetails {
+  width: 65%;
+  height: 100%;
+  box-sizing: border-box;
+  background-image: linear-gradient(90deg, #83a4d4 0%, #b6fbff 100%);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftDiv {
+  width: 40%;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftDiv img {
+  width: 60%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.middleDiv {
+  width: 60%;
+  box-sizing: border-box;
+  padding-left: 5%;
+}
+
+.rightDiv {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rightDiv button {
+  width: 70%;
+  padding: 10px 5px;
+  border-radius: 30px;
+  background-image: linear-gradient(90deg, #acb6e5 0%, #86fde8 100%);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .donorContainer {
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .donorDetailsContainer {
+    font-size: 12px;
+    height: 200px;
+  }
+
+  .rightDiv button {
+    font-size: 12px;
+    padding: 2% 1%;
+  }
+
+  .donorContainer h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .donorContainer {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .donorDetailsContainer {
+    font-size: 8px;
+    height: 180px;
+  }
+
+  .donorDetails {
+    border-radius: 20px;
+  }
+
+  .rightDiv button {
+    font-size: 8px;
+    padding: 4% 2%;
+    border-radius: 20px;
+  }
+
+  .donorContainer h1 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,81 @@
+.filterContainer {
+  width: 100%;
+}
+
+.firstDiv {
+  width: inherit;
+  /* height: 40px; */
+  box-sizing: border-box;
+  padding: 10px 30px;
+  background-image: linear-gradient(to right, #abb8e5, #8cf3e8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.firstDiv h2 {
+  margin: 0;
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.secondDiv {
+  width: inherit;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(to right, #ced3d4, #e3e5e5);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.secondDiv select {
+  box-sizing: border-box;
+  width: 20%;
+  /* height: 30px; */
+  background-image: linear-gradient(to right, #ced3d4, #e3e5e5);
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 4px;
+  color: #6b6c6c;
+  font-size: 1rem;
+}
+
+.secondDiv button {
+  width: 17%;
+  height: 30px;
+  border-radius: 7px;
+  background-image: linear-gradient(to right, #a6c0e5, #8bf4e8);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  /* overflow: scroll; */
+}
+
+@media screen and (max-width: 431px) {
+  .firstDiv {
+    padding: 7px 20px;
+  }
+  .firstDiv h2 {
+    font-size: 0.8rem;
+  }
+
+  .secondDiv {
+    height: 40px;
+  }
+
+  .secondDiv select {
+    padding: 2px 4px;
+    font-size: 0.5rem;
+  }
+
+  .secondDiv button {
+    height: 18px;
+    font-size: 0.5rem;
+  }
+}
