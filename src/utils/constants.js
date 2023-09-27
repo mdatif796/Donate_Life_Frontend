@@ -1,4 +1,7 @@
-const API_ROOT = "http://127.0.0.1:8000";
+export const API_ROOT =
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:8000"
+    : "http://16.171.57.202";
 // const API_ROOT = "http://16.171.57.202:8000";
 
 export const API_URLS = {
@@ -13,3 +16,8 @@ export const API_URLS = {
 export const bloodGroups = ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"];
 
 export const LOCAL_STORAGE_TOKEN_KEY = "donate_life";
+
+const CLOUD_NAME = "dq1drdyzc";
+export const UPLOAD_PRESET = "donate_life";
+
+export const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;

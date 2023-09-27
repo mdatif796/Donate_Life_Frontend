@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { message, Spin, Upload } from "antd";
+import { API_ROOT, CLOUDINARY_URL, UPLOAD_PRESET } from "../utils/constants";
 const beforeUpload = (file) => {
   const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
   if (!isJpgOrPng) {
@@ -22,18 +23,13 @@ const UploadProfilePic = (props) => {
       return;
     }
     if (info.file.status === "done") {
-      const cloudName = "dq1drdyzc";
-      const uploadPreset = "donate_life";
       const data = new FormData();
       data.append("file", info.file.originFileObj);
-      data.append("upload_preset", uploadPreset);
-      const res = await fetch(
-        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-        {
-          method: "POST",
-          body: data,
-        }
-      );
+      data.append("upload_preset", UPLOAD_PRESET);
+      const res = await fetch(CLOUDINARY_URL, {
+        method: "POST",
+        body: data,
+      });
       const img = await res.json();
       console.log(img);
       setLoading(false);
@@ -61,8 +57,7 @@ const UploadProfilePic = (props) => {
         className="avatar-uploader"
         showUploadList={false}
         beforeUpload={beforeUpload}
-        action={"http://127.0.0.1:8000/api/health-check"}
-        // action={"http://16.171.57.202:8000/api/health-check"}
+        action={`${API_ROOT}/api/health-check`}
         onChange={handleChange}
         accept=".png,.jpeg,.jpg"
       >
