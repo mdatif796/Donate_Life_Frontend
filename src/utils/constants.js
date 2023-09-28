@@ -1,7 +1,7 @@
 export const API_ROOT =
   process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:8000"
-    : "http://16.171.57.202";
+    : "http://51.20.40.178";
 // const API_ROOT = "http://16.171.57.202:8000";
 
 export const API_URLS = {
