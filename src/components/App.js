@@ -10,7 +10,7 @@ import IcuBeds from "./IcuBeds";
 import DonorLogin from "./DonorLogin";
 import BloodBankLogin from "./BloodBankLogin";
 import DonorSignup from "./DonorSignup";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 
 const PrivateRoute = ({ children }) => {
   const auth = useAuth();
@@ -26,8 +26,8 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      <Nav />
+      <Navbar />
+      {/* <Nav /> */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
