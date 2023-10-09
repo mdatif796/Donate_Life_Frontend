@@ -6,6 +6,7 @@
   left: 0;
   height: 300px;
   width: 7%;
+  z-index: 20;
 }
 
 .vectorDown {
@@ -16,6 +17,7 @@
   right: 0;
   height: 250px;
   width: 8%;
+  z-index: 20;
 }
 
 @media screen and (max-width: 768px) {

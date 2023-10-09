@@ -18,14 +18,16 @@ const BloodBanks = () => {
           let res = await fetch(url);
           res = await res.json();
           let response = await getBloodBank(
-            res.address.state ? res.address.state : "",
-            res.address.city ? res.address.city : "",
+            res.address.state ? res.address.state : "Bihar",
+            res.address.city ? res.address.city : "Patna",
             ""
           );
           setBloodBanks(response.bloodBanks);
           setLoading(false);
         },
-        (err) => {
+        async (err) => {
+          let response = await getBloodBank("Bihar", "Patna", "");
+          setBloodBanks(response.bloodBanks);
           setLoading(false);
         }
       );

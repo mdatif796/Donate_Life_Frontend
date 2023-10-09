@@ -18,13 +18,15 @@ const IcuBeds = () => {
           let res = await fetch(url);
           res = await res.json();
           let response = await getHospitals(
-            res.address.state ? res.address.state : "",
-            res.address.city ? res.address.city : ""
+            res.address.state ? res.address.state : "Bihar",
+            res.address.city ? res.address.city : "Patna"
           );
           setHospitals(response.hospitals);
           setLoading(false);
         },
-        (err) => {
+        async (err) => {
+          let response = await getHospitals("Bihar", "Patna");
+          setHospitals(response.hospitals);
           setLoading(false);
         }
       );

@@ -8,32 +8,38 @@ import vector3 from "../images/vector_3.png";
 import bloodHouse from "../images/blood_home.png";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
+import { variants } from "../animation-variants/pageVariants";
 const Home = () => {
   return (
-    <div className={styles.homeContainer}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={variants}
+      className={styles.homeContainer}
+    >
       <div className={styles.firstDiv}>
-        <motion.div
-          className={styles.innerDiv}
-          initial={{ x: "-100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
+        <div className={styles.innerDiv}>
           <img className={styles.vector1} src={vector1} alt="vector-1" />
           <button className={styles.donateBloodBtn}>
             <Link to="/donate-blood">Donate Blood</Link>
           </button>
-        </motion.div>
-        <motion.img
+        </div>
+        <img
           className={styles.heroImage}
           src={heroImage}
           alt="everyone-could-be-a-hero"
-          initial={{ x: "100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       </div>
       <div className={styles.firstDiv}>
-        <img className={styles.bloodPouch} src={bloodPouch} alt="blood-pouch" />
+        <motion.img
+          initial={{ x: "-100px", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={styles.bloodPouch}
+          src={bloodPouch}
+          alt="blood-pouch"
+        />
         <img className={styles.vector2} src={vector2} alt="vector-2" />
         <h1 className={styles.bloodHeading}>Looking for blood</h1>
         <button className={styles.donorBtn}>
@@ -45,7 +51,14 @@ const Home = () => {
       </div>
       <div className={styles.firstDiv}>
         <img className={styles.vector3} src={vector3} alt="vector-3" />
-        <img className={styles.bloodHouse} src={bloodHouse} alt="blood-house" />
+        <motion.img
+          initial={{ x: "100px", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={styles.bloodHouse}
+          src={bloodHouse}
+          alt="blood-house"
+        />
         <h1 className={styles.availableIcuHeading}>Available ICU Beds</h1>
         <button style={{ top: "33%", left: "2%", width: "24%" }}>
           <Link to="/icu-beds">Find beds</Link>
@@ -57,7 +70,7 @@ const Home = () => {
       {/* <div className={styles.footer}> */}
       <Footer />
       {/* </div> */}
-    </div>
+    </motion.div>
   );
 };
 

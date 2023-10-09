@@ -3,12 +3,23 @@ import phone from "../images/phone-call.png";
 import { motion } from "framer-motion";
 const BloodBankAndHospitalCard = (props) => {
   const { data, cardFor } = props;
+
+  const cardVariants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
+    hidden: { x: "250px", opacity: 0 },
+  };
+
   return (
     <motion.div
       className={styles.cardContainer}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 1 }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={cardVariants}
     >
       <button className={styles.contactBtn}>
         <img src={phone} alt="phone" />

@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { getDonor } from "../api";
 import styles from "../styles/findDonor.module.css";
-import { useEffect, useState } from "react";
 import Filter from "./Filter";
 import Loader from "./Loader";
 import Vector from "./Vector";
+import { variants } from "../animation-variants/pageVariants";
 const FindDonor = () => {
   const [donors, setDonor] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +26,10 @@ const FindDonor = () => {
           setDonor(donor);
           setLoading(false);
         },
-        (err) => {
+        async (err) => {
+          let response = await getDonor("Bihar", "Patna", "");
+          let donor = response.donor;
+          setDonor(donor);
           setLoading(false);
         }
       );
@@ -40,53 +45,61 @@ const FindDonor = () => {
     return;
   };
   return (
-    <div className={styles.donorContainer}>
+    <>
       <Vector name={"vectorUp"} />
       <Vector name={"vectorDown"} />
-      <div className={styles.filterContainer}>
-        <Filter filterFor={"Find Donor"} onFilter={filter} />
-        {donors?.length === 0 && !loading && <h1>Not found</h1>}
-      </div>
-      {loading ? (
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-40%",
-            left: "50%",
-          }}
-        >
-          <Loader />
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        variants={variants}
+        className={styles.donorContainer}
+      >
+        <div className={styles.filterContainer}>
+          <Filter filterFor={"Find Donor"} onFilter={filter} />
+          {donors?.length === 0 && !loading && <h1>Not found</h1>}
         </div>
-      ) : (
-        <div className={styles.donorCardContainer}>
-          {donors?.map((donor) => {
-            return (
-              <div key={donor._id} className={styles.donorCard}>
-                <div>
-                  <img
-                    className={styles.donorPic}
-                    src={donor.profileImg}
-                    alt="profile-img"
-                  />
+        {loading ? (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-40%",
+              left: "50%",
+            }}
+          >
+            <Loader />
+          </div>
+        ) : (
+          <div className={styles.donorCardContainer}>
+            {donors?.map((donor) => {
+              return (
+                <div key={donor._id} className={styles.donorCard}>
+                  <div>
+                    <img
+                      className={styles.donorPic}
+                      src={donor.profileImg}
+                      alt="profile-img"
+                    />
+                  </div>
+                  <p className={styles.donorName}>
+                    {donor.name
+                      .split(" ")
+                      .map((d) => d[0].toUpperCase() + d.slice(1))
+                      .join(" ")}
+                  </p>
+                  <div className={styles.contactDiv}>
+                    <span>
+                      {donor.bloodGroup} <span>ve</span>
+                    </span>{" "}
+                    <span>{donor.contact}</span>
+                  </div>
                 </div>
-                <p className={styles.donorName}>
-                  {donor.name
-                    .split(" ")
-                    .map((d) => d[0].toUpperCase() + d.slice(1))
-                    .join(" ")}
-                </p>
-                <div className={styles.contactDiv}>
-                  <span>
-                    {donor.bloodGroup} <span>ve</span>
-                  </span>{" "}
-                  <span>{donor.contact}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
+              );
+            })}
+          </div>
+        )}
+      </motion.div>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ const Vector = (props) => {
     <img
       style={
         name === "vectorUp"
-          ? { top: "70px" }
+          ? { top: "64px" }
           : { top: window.innerHeight - 250 + "px" }
       }
       className={name === "vectorUp" ? styles.vectorUp : styles.vectorDown}
